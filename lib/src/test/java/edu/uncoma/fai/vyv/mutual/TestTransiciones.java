@@ -74,7 +74,7 @@ public class TestTransiciones extends Mutual {
 		System.out.println(m.getConsumo());
 		assertTrue(400 == m.getConsumo());
 		assertTrue(2 == m.getBeneficiarios());
-		assertTrue(Mutual.ESTADO_BALANCEADO == m.getEstado());
+		assertTrue(Mutual.ESTADO_GANANCIA == m.getEstado());
 
 		m.addTitular(0);
 		assertTrue(1100 == m.getCredito());
@@ -171,7 +171,7 @@ public class TestTransiciones extends Mutual {
 		m.addTitular(0);
 		assertTrue(2200 == m.getCredito());
 		assertTrue(5 == m.getTitulares());
-		assertTrue(Mutual.ESTADO_BALANCEADO == m.getEstado());
+		assertTrue(Mutual.ESTADO_GANANCIA == m.getEstado());
 
 		m.addBeneficiario(3);
 		System.out.println(m.getConsumo());
@@ -247,14 +247,14 @@ public class TestTransiciones extends Mutual {
 
 		m.addBeneficiario(1);
 		System.out.println(m.getConsumo());
-		assertTrue(3000 == m.getConsumo());
-		assertTrue(15 == m.getBeneficiarios());
+		assertTrue(2800 == m.getConsumo());
+		assertTrue(14 == m.getBeneficiarios());
 		assertTrue(Mutual.ESTADO_PERDIDA == m.getEstado());
 
 		m.addTitular(0);
 		assertTrue(2400 == m.getCredito());
 		assertTrue(6 == m.getTitulares());
-		assertTrue(Mutual.ESTADO_PERDIDA == m.getEstado());
+		assertTrue(Mutual.ESTADO_PASIVO == m.getEstado());
 
 		m.deleteTitular(0);
 		assertTrue(2200 == m.getCredito());
@@ -262,15 +262,15 @@ public class TestTransiciones extends Mutual {
 		assertTrue(Mutual.ESTADO_PERDIDA == m.getEstado());
 
 		m.deleteBeneficiario(1);
-		assertTrue(2800 == m.getConsumo());
-		assertTrue(14 == m.getBeneficiarios());
-		assertTrue(Mutual.ESTADO_PERDIDA == m.getEstado());
+		assertTrue(2600 == m.getConsumo());
+		assertTrue(13 == m.getBeneficiarios());
+		assertTrue(Mutual.ESTADO_PASIVO == m.getEstado());
 
 		assertTrue(5 == m.getTitulares());
-		assertTrue(14 == m.getBeneficiarios());
+		assertTrue(13 == m.getBeneficiarios());
 		assertTrue(2200 == m.getCredito());
-		assertTrue(2800 == m.getConsumo());
-		assertTrue(Mutual.ESTADO_PERDIDA == m.getEstado());
+		assertTrue(2600 == m.getConsumo());
+		assertTrue(Mutual.ESTADO_PASIVO == m.getEstado());
 
 	}
 }
