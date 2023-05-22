@@ -1,10 +1,8 @@
-package edu.uncoma.fai.vyv;
+package edu.uncoma.fai.vyv.mutual;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
-import edu.uncoma.fai.vyv.mutual.Mutual;
 
 public class TestAcciones {
 
