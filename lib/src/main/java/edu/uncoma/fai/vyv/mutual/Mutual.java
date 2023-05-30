@@ -53,6 +53,9 @@ public class Mutual {
 	}
 
 	public void addTitular(int categoria) {
+		if (categoria < 0 || categoria > 2)
+			return;
+
 		if (categoria == TITULAR_A) {
 			this.credito = credito + MONTO_A;
 		} else if (categoria == TITULAR_B) {
@@ -65,6 +68,9 @@ public class Mutual {
 	}
 
 	public void deleteTitular(int categoria) {
+		if (categoria < 0 || categoria > 2)
+			return;
+
 		if (titulares > 0) {
 			if (categoria == TITULAR_A) {
 				this.credito = credito - MONTO_A;
